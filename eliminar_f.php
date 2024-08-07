@@ -28,6 +28,7 @@ include 'conexion_2.php';
     header("location: vendedor.php");
     
     
+    
  
     
 

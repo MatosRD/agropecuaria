@@ -1,5 +1,5 @@
 <?php
-require('./administrador_S');
+require('./../../conexion_DB/Conexion.php');
 
 $tipo       = $_FILES['dataCliente']['type'];
 $tamanio    = $_FILES['dataCliente']['size'];
@@ -12,27 +12,22 @@ foreach ($lineas as $linea) {
     $cantidad_registros = count($lineas);
     $cantidad_regist_agregados =  ($cantidad_registros - 1);
 
+
     if ($i != 0) {
 
-        $datos = explode(";", $linea);
+        $datos = explode(",", $linea);
        
-        $nombre                = !empty($datos[0])  ? ($datos[0]) : '';
-		$precio                = !empty($datos[1])  ? ($datos[1]) : '';
-        $id               = !empty($datos[2])  ? ($datos[2]) : '';
+        $nombre                    = !empty($datos[0])  ? ($datos[0]) : '';
+        $precio                = !empty($datos[1])  ? ($datos[1]) : '';
+		
+        
+        
        
-    $insertar = "INSERT INTO one( 
-            nombre,
-			precio,
-            id
-        ) VALUES(
-            '$nombre',
-			'$precio',
-            '$id'
-        )";
+    $insertar = "INSERT INTO one(nombre, precio ) VALUES('$nombre','$precio')";
         mysqli_query($conexion, $insertar);
     }
 
-      echo '<div>'. $i. "). " .$linea.'</div>';
+      echo '<div>'.$i. "). " .$linea.'</div>';
     $i++;
 }
 
@@ -41,4 +36,3 @@ foreach ($lineas as $linea) {
 
 ?>
 
-<a href="index.php">Atras</a>
