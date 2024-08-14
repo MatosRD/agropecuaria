@@ -25,10 +25,10 @@ include './../conexion_DB/Conexion.php';
 <input type="checkbox" id="btn-nav">
         <nav>
             <ul class="navigation">
-                <li> <a href=""> <img src="./../img/hogar.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Inventario</span></a></li>
+                <li> <a href="inicio_administrador.php"> <img src="./../img/hogar.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Inventario</span></a></li>
                 <li> <a href="pedidos.php"><img src="./../img/pedido.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Pedido</span></a></li>
                 <li> <a href="cliente.php"><img src="./../img/cliente.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Cliente</span></a></li>
-                <li> <a href=""><img src="./../img/informe.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Reporte</span></a></li>
+                <li> <a href="reportes.php"><img src="./../img/informe.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Reporte</span></a></li>
                 <li> <a href=""><img src="./../img/grafico.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Grafico</span></a></li>
                 <li> <a href="consulta.php"><img src="./../img/vendedor.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Actividad</span></a></li>
                 <li> <a href="usuario.php"><img src="./../img/perfil-del-usuario.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Usuarios</span></a></li>
@@ -85,13 +85,13 @@ include './../conexion_DB/Conexion.php';
     </div>
   
      
-    <div class="esp" >    
-    <button class= "mas"><?php echo"<a href='./agregar_Screen/agregar_articulo.php'>+</a>"; ?> </button>  
-           <button class= "meno" ><?php echo"<a href='./excel_Screen/excel_articulos.php'>Excel</a>"; ?> </button>  
-       </div> 
+    <div class="esp" style=" width:87%; margin-top:20px; ">    
+        <button class= "mas"><?php echo"<a href='./agregar_Screen/agregar_articulo.php'>+</a>"; ?> </button>  
+        <button class= "meno" ><?php echo"<a href='./excel_Screen/excel_articulos.php'>Excel</a>"; ?> </button>  
+    </div> 
 
     
-    <div class="tabl" >
+    <div class="tabl" style="display:flex;  flex-direction:column;" >
         <table>
             <thead>
                 <tr>
@@ -145,8 +145,8 @@ include './../conexion_DB/Conexion.php';
                     }
                     </style>';
                    
-                echo '<a href="./inicio_administrador.php"><button  style="display:flex; color: white; background: blue;
-                padding: 8px 15px; border:none; border-radius:10px;text-decoration: none;  margin-left: 30px; cursor: pointer; "> Limpiar pantalla</button></a>';
+                echo '<a href="./inicio_administrador.php" style="margin-top:40px;"><button  style="display:flex; color: white; background: blue;
+                padding: 8px 15px; border:none; border-radius:10px;text-decoration: none;  margin-left: 40px; cursor: pointer; "> Limpiar pantalla</button></a>';
                 while($fila = mysqli_fetch_assoc($total)){
                     echo '<tr class="no2">';   
                         
@@ -157,11 +157,11 @@ include './../conexion_DB/Conexion.php';
                         echo '<td>'; echo number_format($fila['precio_costo'],2); echo '</td>';
                         echo '<td>'; echo number_format($fila['precio_venta'],2); echo '</td>';
                         echo '<td>'; echo number_format($fila['ganancia'],2); echo '</td>';
-                        echo '<td>'; echo" <a href='./eliminar_editar/eliminar_inventario.php?id=".$fila['id_inventario']."  ' 
-                        onclick='return confirmar()' class='aa' >Eliminar</a>
+                        echo '<td>'; echo" <button id='ea'><a href='./eliminar_editar/eliminar_inventario.php?id=".$fila['id_inventario']."  ' 
+                        onclick='return confirmar()'  >Eliminar</a></button>
                         
-                        <a href='./eliminar_editar/editar_inventario.php?id=".$fila['id_inventario']." ' 
-                        ' class='ab' >Editar</a>"
+                       <button id='ex' > <a href='./eliminar_editar/editar_inventario.php?id=".$fila['id_inventario']." ' 
+                        '  >Editar</a> </button>"
                         ; echo '</td>';
 
                 echo '</tr>';

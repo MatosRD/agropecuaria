@@ -20,15 +20,17 @@ if(empty($_SESSION["id"]) or $_SESSION["roles"] == 2 ){
 <body>
 
 <header class="main-header">
-<label for="btn-nav" class="btn-nav"><img src="./../img/menu.png" alt="" style="width: 20px; "></label>
+<label for="btn-nav" class="btn-nav"  ><img src="./../img/menu.png" alt="" style="width: 20px; "></label>
 <input type="checkbox" id="btn-nav">
         <nav>
             <ul class="navigation">
                 <li> <a href="inicio_administrador.php"> <img src="./../img/hogar.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Inventario</span></a></li>
                 <li> <a href="pedidos.php"><img src="./../img/pedido.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Pedido</span></a></li>
-                <li> <a href=""><img src="./../img/cliente.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Cliente</span></a></li>
-                <li> <a href=""><img src="./../img/informe.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Reporte</span></a></li>
+                <li> <a href="cliente.php"><img src="./../img/cliente.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Cliente</span></a></li>
+                <li> <a href="reportes.php"><img src="./../img/informe.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Reporte</span></a></li>
                 <li> <a href=""><img src="./../img/grafico.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Grafico</span></a></li>
+                <li> <a href="consulta.php"><img src="./../img/vendedor.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Actividad</span></a></li>
+                <li> <a href="usuario.php"><img src="./../img/perfil-del-usuario.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Usuarios</span></a></li>
                 <li> <a href="cerrar.php"><img src="./../img/salir.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Salir</span></a></li>
             </ul>
         </nav>
@@ -38,7 +40,7 @@ if(empty($_SESSION["id"]) or $_SESSION["roles"] == 2 ){
 
 <div class="titul"><h1>Cliente</h1></div>
 <div class="col" style="margin-top: 10px;">
-       <form action="./excel_Screen/importar.php" method="POST" enctype="multipart/form-data">
+       <form action="./excel_Screen/importar_cliente.php" method="POST" enctype="multipart/form-data">
          <div class="file-input text-center" >
             
              <input  type="file" name="dataCliente" id="file-input"   class="file-input__input" />
@@ -59,13 +61,13 @@ if(empty($_SESSION["id"]) or $_SESSION["roles"] == 2 ){
    
 
      
-    <div class="esp" >    
+    <div class="esp" style="margin-top: 10px;" >    
     <button style="margin-left: 200px; background: blue; border: none; border-radius: 5px;"><?php echo"<a href='./agregar_Screen/agregar_cliente.php'>+</a>"; ?> </button>  
            <button style="background: green; border: none; border-radius: 5px;"><?php echo"<a href='./excel_Screen/excel_cliente.php'>Excel</a>"; ?> </button>  
        </div> 
 
     
-    <div class="tabl" >
+    <div class="tabl" style="flex-direction: column; width:87%;">
         <table>
             <thead>
                 <tr>
@@ -122,11 +124,16 @@ if(empty($_SESSION["id"]) or $_SESSION["roles"] == 2 ){
                         echo '<td>'; echo $fila['direccion']; echo '</td>';
                         echo '<td>'; echo $fila['longitud']; echo '</td>';
                         echo '<td>'; echo $fila['latitud']; echo '</td>';
-                        echo '<td>'; echo" <a href='./eliminar_editar/eliminar_cliente.php?id=".$fila['id_cliente']."  ' 
-                        onclick='return confirmar()' class='aa' >Eliminar</a>
+                        echo '<td   >'; echo" 
+                         <button id='ea'>
+                         <a href='./eliminar_editar/editar_cliente.php?id=".$fila['id_cliente']." ' 
+                        ' class='ea' >Editar</a>
+                         <button>
                         
-                        <a href='./eliminar_editar/editar_cliente.php?id=".$fila['id_cliente']." ' 
-                        ' class='ab' >Editar</a>"
+                        <button id='ex'style='margin-left:10px;'><a href='./eliminar_editar/eliminar_cliente.php?id=".$fila['id_cliente']."  ' 
+                        onclick='return confirmar()' class='aa' >Eliminar</a> <button>
+                        
+                       "
                         ; echo '</td>';
 
                        
@@ -139,7 +146,7 @@ if(empty($_SESSION["id"]) or $_SESSION["roles"] == 2 ){
             }else{
         
 
-                echo '<div class="cliente" style="margin-left: 30px;">articulo no encotrado</div>';
+                echo '<div class="cliente" style="margin-left: 30px; margin-top:30px;">Cliente no encotrado</div>';
             }
         }
     }

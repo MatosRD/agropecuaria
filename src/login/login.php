@@ -13,6 +13,7 @@ if(!empty(['buton_login'])){
             $_SESSION["id"] = $datos-> id_login;
             $_SESSION["nombres"] = $datos-> usuario;
             $_SESSION["roles"] = $datos-> rol;
+            $_SESSION["estado"] = $datos-> estado;
             $nombre =  $_SESSION["nombres"];
             
 

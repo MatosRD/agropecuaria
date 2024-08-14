@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(empty($_SESSION["id"]) or $_SESSION["estado"] == 'inactivo' ){
+    header("location: ../login/login.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

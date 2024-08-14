@@ -4,7 +4,7 @@ include './../../conexion_DB/Conexion.php';
  
     $id = $_GET['id'];
 
-    $delete = "DELETE FROM pedidos_c WHERE id_pedidos ='" .$id."'";
+    $delete = "DELETE FROM pedidos_c WHERE id_pedidos = '$id'";
     
 
     $resul2 = mysqli_query($conexion,"SELECT * FROM pedidos_c WHERE id_pedidos = '$id' ");

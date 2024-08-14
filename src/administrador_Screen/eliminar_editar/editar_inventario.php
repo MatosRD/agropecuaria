@@ -17,6 +17,19 @@ $filas = mysqli_fetch_assoc($ejecut);
     $precio_v = $filas['precio_venta'];
     $ganancia = $filas['ganancia'];
 ?>
+<style>
+.agre form .agre_2 input,label{
+    margin: 0px 40px 0px 40px;
+   
+
+}
+.agre form .agre_2 input{
+    padding-left: 10px;
+    padding: 15px 10px;
+}
+
+</style>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,11 +42,11 @@ $filas = mysqli_fetch_assoc($ejecut);
 <body>
     <div class="agre">
         <form action="" method="post">
-            <div class="agre_2">
+            <div class="agre_2" style="height: auto;">
                 <div class="mover"><a href="./../inicio_administrador.php"><h2>X</h2></a></div>
                 <h1>EDITAR</h1>
                 <?php
-                include 'eliminar_editar/edicion.php';
+                include 'edicion.php';
                 ?>
     
 
@@ -50,7 +63,7 @@ $filas = mysqli_fetch_assoc($ejecut);
                 <label for="Precio_compra" >Ganancia:</label>
                 <input  id="pc"  type="text" name="ganancia" value="<?php echo $ganancia ?>">
 
-                <button  name="edid" >Editar</button>
+                <button  name="edid" style="margin-bottom: 20px;">Editar</button>
             </div>
             </form>
         </div>

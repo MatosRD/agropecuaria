@@ -25,15 +25,28 @@ $filas = mysqli_fetch_assoc($ejecut);
     <title>Editar</title>
 </head>
 <body>
+<style>
+.agre form .agre_2 input,label{
+    margin: 0px 40px 0px 40px;
+   
+
+}
+.agre form .agre_2 input{
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding: 2px 10px;
+}
+
+</style>
 
     
     <div class="agre">
         <form action="" method="post">
-            <div class="agre_2">
-                <div class="mover"><a href="./../cliente.php"><h2>X</h2></a></div>
+            <div class="agre_2" style="height: auto;">
+                <div class="mover" ><a href="./../cliente.php"><h2>X</h2></a></div>
                 <h1>EDITAR</h1>
                 <?php
-                include 'eliminar_editar/edicion_1.php';
+                include 'edicion_1.php';
                 ?>
     
 
@@ -45,7 +58,7 @@ $filas = mysqli_fetch_assoc($ejecut);
                 <input  id="ct"  type="text" name="logintud" value="<?php echo $latitud ?>">
                 <label for="unidad" >Latitud:</label>
                 <input  id="pc"  type="text" name="latitud" value="<?php echo $logintud ?>">
-                <button  name="edid" >Editar</button>
+                <button  name="edid" style="margin-bottom: 20px; cursor:pointer;">Editar</button>
             </div>
             </form>
         </div>

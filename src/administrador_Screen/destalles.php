@@ -1,5 +1,8 @@
 <?php 
 session_start();
+if(empty($_SESSION["id"]) or $_SESSION["roles"] == 2 ){
+    header("location: ../login/login.php");
+}
 include './../conexion_DB/Conexion.php';
 $id = $_GET['id'];
 
@@ -61,7 +64,7 @@ if(!empty(['ticket'])){
             <label for="country">
                 <select id="country" name="country">
                     <?php
-                        $consulta = mysqli_query($conexion,"SELECT * FROM pedidos_c WHERE nopedido = '$id' ");
+                        $consulta = mysqli_query($conexion,"SELECT DISTINCT estado FROM pedidos_c WHERE nopedido = '$id' ");
                         while($fila = mysqli_fetch_assoc($consulta)){
                            $estado = $fila['estado'];
                        
@@ -122,19 +125,14 @@ if(!empty(['ticket'])){
                     $sql = mysqli_query($conexion, $consulta);
                 ?>
                 <?php  while($fila = mysqli_fetch_assoc($sql)) { 
-
-                    $pp = $fila['id_pedidos'];
-
-                    
-                    
-                    ?>
+                    $pp = $fila['id_pedidos'];?>
 
                     <tr class="no1">
                     <td><?php echo $fila['articulo'] ?> </td>
                     <td ><?php echo $fila['cantidad'] ?> </td>
                     <td><?php echo $fila['precio_venta'] ?> </td>
                     <td>
-                        <?php  number_format($descuente = $fila['descuento']);  ?>
+                    <?php  number_format($descuente = $fila['descuento']);?>
                     <button  > <?php echo "<a href='./eliminar_editar/editar_d.php?id=".$fila['id_pedidos']."'> $descuente </a>" ?></button>
                     </td>
                     <td><?php echo number_format($fila['sub_total'],2); ?> </td>

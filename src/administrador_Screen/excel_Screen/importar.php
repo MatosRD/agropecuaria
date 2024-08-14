@@ -20,11 +20,11 @@ foreach ($lineas as $linea) {
        
         $codigo = !empty($datos[0]) ? $datos[0] : '';
         $articulo = !empty($datos[1]) ? $datos[1] : '';
-        $precio_costo = !empty($datos[2]) ? $datos[2] : '';
-        $precio_venta = !empty($datos[3]) ? $datos[3] : '';
-        $cantidad = !empty($datos[4]) ? $datos[4] : '';
-        $ganancia = !empty($datos[5]) ? $datos[5] : '';
-        $cantidad_vendida = !empty($datos[6]) ? $datos[6] : '';
+        $cantidad = !empty($datos[2]) ? $datos[2] : '';
+        $cantidad_vendida = !empty($datos[3]) ? $datos[3] : '';
+        $precio_costo = !empty($datos[4]) ? $datos[4] : '';
+        $precio_venta = !empty($datos[5]) ? $datos[5] : '';
+        $ganancia = !empty($datos[6]) ? $datos[6] : '';
 
         // Verificar si el código no está vacío
         if (!empty($codigo)) {
@@ -34,8 +34,8 @@ foreach ($lineas as $linea) {
 
             // No existe Registros Duplicados
             if ($cant_duplicidad == 0) {
-                $insertar = "INSERT INTO inventario(codigo, articulo, precio_costo, precio_venta, cantidad, ganancia, cantidad_vendida) 
-                             VALUES('$codigo', '$articulo', '$precio_costo', '$precio_venta', '$cantidad', '$ganancia', '$cantidad_vendida')";
+                $insertar = "INSERT INTO inventario(codigo, articulo, cantidad, cantidad_vendida, precio_costo, precio_venta, ganancia) 
+                             VALUES('$codigo', '$articulo', '$cantidad', '$cantidad_vendida', '$precio_costo', '$precio_venta', '$ganancia')";
                 mysqli_query($conexion, $insertar);
             } else {
                 // Caso Contrario actualizo el o los Registros ya existentes

@@ -368,10 +368,20 @@ table button{
   border: none;
   border-radius: 5px;
 }
+.tabl{
+  margin-left:60px;
+}
+
 
 @media (width <= 850px ){
+
+  .tabl{
+    margin-left: 0px; 
+  }
   .tabl table{
     display: block;
+    margin-top: 30px;
+    
   }
   .titulop h1{
     margin-left: -110px;
@@ -869,6 +879,8 @@ margin-bottom: 20px;
  background: #f6f5f5;
 }
 
+
+
 .cont_c .cont_2 h1{
   margin-top: 20px;
   text-align: center;
@@ -890,4 +902,87 @@ margin-bottom: 20px;
   text-decoration: none;
   cursor: pointer;
  
+}
+
+.centrl{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.centrl h1{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.fechi{
+  width: 100%;
+  margin-bottom: 80px;
+} 
+
+.fechi .fechi_1 form button{
+  margin-left: 15px;
+  padding: 3px 10px;
+  background: #6836ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 30px;
+  margin-top: 13px;
+}
+
+.fechi .fechi_1 form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 70px;
+  
+}
+
+.fechi .fechi_1 form input{
+  height:25px;
+  padding-left: 8px;
+  
+}
+
+.fac_2{
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  overflow: auto;
+  
+}
+
+.fac_2 table{
+  
+  width: 60%;
+  margin: auto;
+  justify-content: center;
+ 
+}
+
+
+
+.fechi .fechi_1 .fechi2{
+  margin-left: 15px;
+}
+.fechi .fechi_1 .fechi3{
+  margin-left: 15px;
+  margin-top: 20px  ;
+}
+
+.esp{
+  display:flex;
+  width:60% ;
+  margin: auto;
+}
+
+.esp button{
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
 }

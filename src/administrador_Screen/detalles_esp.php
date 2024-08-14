@@ -1,5 +1,8 @@
 <?php 
 session_start();
+if(empty($_SESSION["id"]) or $_SESSION["roles"] == 2 ){
+    header("location: ../login/login.php");
+}
 include './../conexion_DB/Conexion.php';
 $id = $_GET['id'];
 

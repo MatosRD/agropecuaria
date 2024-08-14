@@ -8,7 +8,7 @@ if(!empty(['KK'])){
         $number = $_POST['cantidad'];
         
         date_default_timezone_set('America/Santo_Domingo');
-        $fecha = date('d-m-Y');
+        $fecha = date('Y-m-d');
         $vendedor = $_SESSION["nombres"];
         
      
@@ -25,6 +25,8 @@ if(!empty(['KK'])){
         
         $nasn = 11;
 
+        $gana = $ganancia * $number;
+
         $sumar = $number +  $cantidad_v; 
         $quitar = $cantidad - $number;
         $sub = $precio_v * $number;
@@ -34,7 +36,7 @@ if(!empty(['KK'])){
        if( $quitar  >= 0){
 
     $ins_f = "INSERT INTO pedidos (articulos, fecha, vendedor, codigo, precio_costo, precio_venta, cantidad, ganancia, sub_total,descuento,estado,total)
-     VALUES ('$articulo','$fecha','$vendedor','$codigo','$precio_c','$precio_v','$number','$ganancia','$sub','$descuento','$estado','$sub')";
+     VALUES ('$articulo','$fecha','$vendedor','$codigo','$precio_c','$precio_v','$number','$gana','$sub','$descuento','$estado','$sub')";
     $enviar = mysqli_query($conexion, $ins_f);
 
 

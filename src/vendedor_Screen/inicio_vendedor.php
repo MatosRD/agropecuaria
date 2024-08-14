@@ -1,8 +1,12 @@
 <?php
 
-
-include './../conexion_DB/Conexion.php';
 session_start();
+if(empty($_SESSION["id"]) or $_SESSION["estado"] == 'inactivo' ){
+    header("location: ../login/login.php");
+}
+    
+include './../conexion_DB/Conexion.php';
+
 
 $id = $_SESSION["id_vendedor"];
 $nombre =  $_SESSION["nombres"];
@@ -46,13 +50,25 @@ $_SESSION['ultima_actividad'] = time();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./../style/style.css">
-    <title>Document</title>
+    <title>Vendedor</title>
 </head>
 
 <body>
 
+<style>
+    .cir{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
 
+ 
 
+</style>
+
+<div class="cir">
+    <a href="salir.php"><img src="./../img/salir.png" alt="" style="width: 35px;"></a>
+</div>
 
 
 <div class="cont_ved">
@@ -121,7 +137,7 @@ $_SESSION['ultima_actividad'] = time();
     </table>
     </div>
     
-    <div class="fac2">
+    <div class="fac2"  >
         <table class="um">
             <thead>
                 <tr>
