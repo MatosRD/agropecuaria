@@ -41,7 +41,7 @@ $filas = mysqli_fetch_assoc($ejecut);
 </head>
 <body>
     <div class="agre">
-        <form action="" method="post">
+        <form action=""  method="post" enctype="multipart/form-data">
             <div class="agre_2" style="height: auto;">
                 <div class="mover"><a href="./../inicio_administrador.php"><h2>X</h2></a></div>
                 <h1>EDITAR</h1>
@@ -49,7 +49,8 @@ $filas = mysqli_fetch_assoc($ejecut);
                 include 'edicion.php';
                 ?>
     
-
+                <label for="imagen">Selecciona una imagen:</label>
+                <input type="file" name="imagen">
                 <label for="codigo" >Codigo:</label>
                 <input  id="cd" class="ipp" type="text" name="codigo" value="<?php echo $codigo ?>">
                 <label for="descripcion" >Articulo:</label>

@@ -20,6 +20,8 @@
             <input type="text" name="cliente" placeholder="Cliente" >
             <label for="">Direccion</label>
             <input type="text" name="direccion" placeholder="Direccion" >
+            <label for="">Dia</label>
+            <input type="text" name="dia" placeholder="Direccion" >
             <label for="">Longitud</label>
             <input type="text" name="longitud" placeholder="Longitud" >
             <label for="">Latitud</label>

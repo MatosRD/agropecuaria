@@ -82,6 +82,7 @@ $_SESSION['ultima_actividad'] = time();
     <table >
         <thead>
             <tr>
+                <th style="background: orange; color:black; ">Imagen</th>
                 <th style="background: orange; color:black; ">Producto</th>
                 <th style="background: orange; color:black;">Cantidad</th>
                 <th style="background: orange; color:black;">precio</th>
@@ -109,7 +110,12 @@ $_SESSION['ultima_actividad'] = time();
                             echo '<tr class="no2">'; ?>
                             <form action="" method="post"> <?php
                                 $mx = $codigo = $fila['codigo'];
-                                 ?> <input type="hidden" name="codigo" value="<?php echo $mx;  ?>" style="border: none; background:#ddd; "> <?php 
+                                 ?> 
+                                 <td>
+                        
+                        <?php echo '<img src="data:image/png;base64,' . base64_encode($fila['imagen']) . '" width="100px" height="50px"/>'; ?>
+                        </td>
+                                 <input type="hidden" name="codigo" value="<?php echo $mx;  ?>" style="border: none; background:#ddd; "> <?php 
                                 echo '<td>'; echo $producto = $fila['articulo'];echo '</td>'; ?>
                                 <td><input type="text" name="cantidad" value="1" style="width: 30px;"></td>
                                 <?php

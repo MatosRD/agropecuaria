@@ -2,7 +2,10 @@
 include './../../conexion_DB/Conexion.php';
 
 if(!empty(['pp'])){
-    if(!empty($_POST['codigo'])){
+    if(!empty($_POST['codigo']) AND !empty($_POST['articulo']) AND !empty($_POST['cantidad']) AND !empty($_POST['cantidad']) 
+    AND !empty($_POST['costo']) AND !empty($_POST['venta']) AND !empty($_POST['ganancia']) 
+    ){
+       
         $codigo = $_POST['codigo'];
         $articulo = $_POST['articulo'];
         $cantidad = $_POST['cantidad'];
@@ -16,7 +19,7 @@ if(!empty(['pp'])){
 
             if($cant_duplicidad == 0){
 
-            $insertar = "INSERT INTO inventario (codigo, articulo, precio_costo, precio_venta, cantidad, ganancia) 
+            $insertar = "INSERT INTO inventario (codigo,  articulo, precio_costo, precio_venta, cantidad, ganancia) 
             VALUES ('$codigo','$articulo','$costo','$venta','$cantidad','$ganancia')";
 
             $sql = mysqli_query($conexion, $insertar);

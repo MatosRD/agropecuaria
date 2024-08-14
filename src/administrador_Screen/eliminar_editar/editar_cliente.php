@@ -54,6 +54,8 @@ $filas = mysqli_fetch_assoc($ejecut);
                 <input  id="cd" class="ipp" type="text" name="cliente" value="<?php echo $cliente ?>">
                 <label for="descripcion" >Direccion:</label>
                 <input  id="dc" type="text" name="direccion" value="<?php echo $direccion ?>">
+                <label for="dia" >Dia:</label>
+                <input  id="dc" type="text" name="dia" value="<?php echo $dia ?>">
                 <label for="cantidad" >Longitud:</label>
                 <input  id="ct"  type="text" name="logintud" value="<?php echo $latitud ?>">
                 <label for="unidad" >Latitud:</label>

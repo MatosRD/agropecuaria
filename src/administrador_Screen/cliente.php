@@ -73,6 +73,7 @@ if(empty($_SESSION["id"]) or $_SESSION["roles"] == 2 ){
                 <tr>
                     <th>Cliente</th>
                     <th>Direccion</th>
+                    <th>Dia</th>
                     <th>Longitud</th>
                     <th>Latitud</th>
                     <th>accion</th>
@@ -91,6 +92,7 @@ if(empty($_SESSION["id"]) or $_SESSION["roles"] == 2 ){
                     <tr class="no1">
                     <td><?php echo $fila['nombre'] ?> </td>
                     <td ><?php echo $fila['direccion'] ?> </td>
+                    <td ><?php echo $fila['dia'] ?> </td>
                     <td><?php echo $fila['longitud'] ?> </td>
                     <td><?php echo $fila['latitud'] ?> </td>
                     <td>
@@ -122,6 +124,7 @@ if(empty($_SESSION["id"]) or $_SESSION["roles"] == 2 ){
                         
                         echo '<td>'; echo $fila['nombre']; echo '</td>';
                         echo '<td>'; echo $fila['direccion']; echo '</td>';
+                        echo '<td>'; echo $fila['dia']; echo '</td>';
                         echo '<td>'; echo $fila['longitud']; echo '</td>';
                         echo '<td>'; echo $fila['latitud']; echo '</td>';
                         echo '<td   >'; echo" 

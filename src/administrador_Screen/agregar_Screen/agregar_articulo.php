@@ -8,8 +8,8 @@
 </head>
 <body style="background: white;" >
     
-<div class="justc">
-    <div class="justc1">
+<div class="justc" >
+    <div class="justc1" style="height: 700px; margin-bottom:40px; ">
         <div class="opc" ><a href="./../inicio_administrador.php">X</a></div>
         <h1>Agregar</h1>
         <?php

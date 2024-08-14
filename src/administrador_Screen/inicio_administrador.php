@@ -95,6 +95,7 @@ include './../conexion_DB/Conexion.php';
         <table>
             <thead>
                 <tr>
+                    <th>Imagen</th>
                     <th>Codigo</th>
                     <th>Producto</th>
                     <th>Cantidad</th>
@@ -116,6 +117,10 @@ include './../conexion_DB/Conexion.php';
                 <?php  while($fila = mysqli_fetch_assoc($busqueda)) { ?>
 
                     <tr class="no1">
+                    <td>
+                        
+                    <?php echo '<img src="data:image/png;base64,' . base64_encode($fila['imagen']) . '" width="100px" height="50px"/>'; ?>
+                    </td>
                     <td><?php echo $fila['codigo'] ?> </td>
                     <td ><?php echo $fila['articulo'] ?> </td>
                     <td><?php echo $fila['cantidad'] ?> </td>
