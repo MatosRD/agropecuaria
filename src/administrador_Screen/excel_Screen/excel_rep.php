@@ -3,7 +3,7 @@
     include './../../conexion_DB/Conexion.php';
     header("Content-Type: application/xls");    
         
-    header("Content-Disposition: attachment; filename=documento_exportado_" .        date('d:m:y').".xls");
+    header("Content-Disposition: attachment; filename=Reporte" .        date('d:m:y').".xls");
     header("Pragma: no-cache"); 
     header("Expires: 0");
 
@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cliente <?php echo $fe = date('d/m/y'); ?></title>
+    <title>Reporte <?php echo $fe = date('d/m/y'); ?></title>
 </head>
 <body>
 

@@ -1,9 +1,9 @@
-<?php  
+<?php
 include_once "vendor/autoload.php";
-use Dompdf\Dompdf ;
+use Dompdf\Dompdf;
 $dompdf = new Dompdf();
 ob_start();
-include 'exp_1.php'; 
+include "tabla.php";
 $html = ob_get_clean();
 $dompdf->loadHtml($html);
 $dompdf->render();

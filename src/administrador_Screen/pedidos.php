@@ -80,7 +80,7 @@ if(empty($_SESSION["id"]) or $_SESSION["roles"] == 2 ){
                                 <h4>Cliente</h4>
                                     <p> <?php echo $fila['cliente']; ?> </p>
 
-                                    <button><?php echo"<a href='destalles.php?id=".$fila['nopedido']."'>Detalles</a>"; ?></button>
+                                    <button><?php echo"<a href='destalles.php?id=".$fila['nopedido']."&client=".$fila['cliente']."'>Detalles</a>"; ?></button>
                                 <div class="estado"><?php 
                                 $cliente = $fila['estado']; 
                                 if($cliente == 'activo'){
@@ -122,7 +122,7 @@ if(empty($_SESSION["id"]) or $_SESSION["roles"] == 2 ){
                                 <h4>Cliente</h4>
                                     <p> <?php echo $fila['cliente']; ?> </p>
 
-                                    <button><?php echo"<a href='destalles.php?id=".$fila['nopedido']."'>Detalles</a>"; ?></button>
+                                    <button><?php echo"<a href='destalles.php?id=".$fila['nopedido']."&client=".$fila['cliente']."'>Detalles</a>"; ?></button>
                                     <div class="estado"><?php 
                                 $cliente = $fila['estado']; 
                                 if($cliente == 'activo'){

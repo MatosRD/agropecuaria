@@ -5,6 +5,7 @@ if(empty($_SESSION["id"]) or $_SESSION["roles"] == 2 ){
 }
 include './../conexion_DB/Conexion.php';
 $id = $_GET['id'];
+$clien = $_GET['client'];
 
 
 if(!empty(['ticket'])){
@@ -67,6 +68,7 @@ if(!empty(['ticket'])){
                         $consulta = mysqli_query($conexion,"SELECT DISTINCT estado FROM pedidos_c WHERE nopedido = '$id' ");
                         while($fila = mysqli_fetch_assoc($consulta)){
                            $estado = $fila['estado'];
+                           
                        
                            if( $estado == 'activo'){   
                             echo'<option value="">'.$estado.'</option>';
@@ -107,7 +109,7 @@ if(!empty(['ticket'])){
                     <th  style="background: white; color:black;"><?php  echo $descuentot ?></th>
                     <th style="background: white; color:black;"><?php  echo $sumat ?></th>
                     <th style="background: white; color:black;"><?php  echo number_format($total,2) ?></th>
-                    <th style="background: green;" >Imprimir</th>
+                    <th style="background: green;" ><?php echo "<a href='pdf.php?id=".$id."&client=".$clien."'>Imprimir</a>" ?></th>
                     
                 </tr>
                 <tr>

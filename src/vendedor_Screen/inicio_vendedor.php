@@ -119,12 +119,8 @@ $_SESSION['ultima_actividad'] = time();
                                 echo '<td>'; echo $producto = $fila['articulo'];echo '</td>'; ?>
                                 <td><input type="text" name="cantidad" value="1" style="width: 30px;"></td>
                                 <?php
-                                echo '<td>';
-                                echo number_format($fila['precio_venta'], 2);
-                                echo '</td>';
-                                echo '<td>';
-                                echo "<button id='KK' style='padding: 8px 15px; background: orange; color:black; border-radius:10px; borber:none; cursor:pointer; '>Facturar</button> ";
-                                echo '</td>';
+                                echo '<td>'; echo number_format($fila['precio_venta'], 2); echo '</td>';
+                                echo '<td>'; echo "<button id='KK' style='padding: 8px 15px; background: orange; color:black; border-radius:10px; borber:none; cursor:pointer; '>Facturar</button> ";echo '</td>';
                                 ?>
                             </form> <?php
                                     echo '</tr>';
@@ -148,8 +144,8 @@ $_SESSION['ultima_actividad'] = time();
             <thead>
                 <tr>
                     <td colspan="" style="font-size: 24px;">TOTAL</td>
-                    <td style="">RD</td>
-                    <td style="">
+                    <td >RD</td>
+                    <td >
                         <?php $suma = mysqli_query($conexion, "SELECT SUM(sub_total) FROM pedidos WHERE vendedor ='$nombre'");
                         $row = mysqli_fetch_row($suma);
                         $total = $row[0];
