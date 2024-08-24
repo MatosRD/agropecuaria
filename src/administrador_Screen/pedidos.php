@@ -27,7 +27,7 @@ if(empty($_SESSION["id"]) or $_SESSION["roles"] == 2 ){
                 <li> <a href="pedidos.php"><img src="./../img/pedido.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Pedido</span></a></li>
                 <li> <a href="cliente.php"><img src="./../img/cliente.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Cliente</span></a></li>
                 <li> <a href="reportes.php"><img src="./../img/informe.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Reporte</span></a></li>
-                <li> <a href=""><img src="./../img/grafico.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Grafico</span></a></li>
+                <li> <a href="salida_dia.php"><img src="./../img/grafico.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Salida</span></a></li>
                 <li> <a href="consulta.php"><img src="./../img/vendedor.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Actividad</span></a></li>
                 <li> <a href="usuario.php"><img src="./../img/perfil-del-usuario.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Usuarios</span></a></li>
                 <li> <a href="cerrar.php"><img src="./../img/salir.png" alt="" style="width: 35px;"><span style="padding-left: 10px; position: relative; bottom: 10px ;">Salir</span></a></li>
@@ -71,7 +71,7 @@ if(empty($_SESSION["id"]) or $_SESSION["roles"] == 2 ){
                         <div class="car">
                             <div class="contar"><p><?php echo $cant  ?></p></div>
                             <div class="borrar"><?php echo"<a href='./eliminar_editar/eliminarcar.php?id=".$fila['nopedido']."'
-                              onclick='return confirmar()' >X</a>"; ?></div>
+                              onclick='return confirmar()'>X</a>"; ?></div>
                             <div class="tt">
                                 <h3  >NoPedido</h3>
                                 <p><?php echo $fila['nopedido'];?></p>

@@ -121,7 +121,7 @@ if(mysqli_num_rows($full) > 0){
             echo "<span style='margin-left:110px;'> $hora </span> <span style='margin-left:10px;'> $fecha </span> ";   ?></p>
             
             <p>Cliente: <?php echo $clien    ?></p>
-            <div style="width:260px;   height: auto; word-wrap: break-word; ">Direccion-Client: <?php  echo $direccion ?></div>
+            <div style="width:260px; height:auto;word-wrap:break-word; ">Direccion-Client: <?php  echo $direccion ?></div>
             <p>No: <?php echo $id ?></p>
            
             </div>
@@ -139,8 +139,8 @@ if(mysqli_num_rows($full) > 0){
     
                     <tr class="centrado" style="border-top: 1px solid black; border-bottom: 1px solid black;">
                              
-                            <th>Producto</th>
                             <th>Cant</th>
+                            <th>Descripcion</th>
                             <th>Precio</th>
                             <th>Subtotal</ht>
                     </tr>
@@ -149,12 +149,8 @@ if(mysqli_num_rows($full) > 0){
                 
                 <?php
                     
-                    $descuento = mysqli_query($conexion,"SELECT SUM(descuento) FROM pedidos_c WHERE nopedido = '$id'");  
-                    $nn = mysqli_fetch_row($descuento);
-                    $descuentot = $nn[0];
-                    
                     $buscar = mysqli_query($conexion,"SELECT * FROM pedidos_c WHERE nopedido = '$id'");    
-                    $total = 0 - $descuentot;
+                    $total = 0 ;
                     while($filas = mysqli_fetch_assoc($buscar)){
                         $descrip = $filas['articulo'];
                         $canti = $filas['cantidad'];  
@@ -166,9 +162,8 @@ if(mysqli_num_rows($full) > 0){
                     
                     ?>
                         <tr >
-                            
-                            <td class="cantidad"><?php echo $descrip ?></td>
                             <td class="precio"> <?php echo $canti ?></td>
+                            <td class="cantidad" style=" max-width:50px;height:auto;word-wrap:break-word;"><?php echo $descrip ?></td>
                             <td class="producto"><?php  echo number_format($pre,2); ?></td>
                             <td class="precio"><?php  echo number_format($sub,2);  ?></td>
                             <br>
@@ -176,21 +171,10 @@ if(mysqli_num_rows($full) > 0){
                         <?php  }  ?>
                 </tbody>
                 <br>
-                <tr style="border-top: 1px solid black; border-bottom: 1px solid black;">
-                <td class="producto" colspan="2">
-                    <strong>Descuento </strong>
-                </td>
-                <td>
 
-                </td>
-                <td class="precio" >
-                <?php   echo  number_format( $des, 2); ?>
-                </td>
-                </tr>
                 
-                <tr>
-                
-                <td class="producto" colspan="2">
+                <tr style="border-top:1px solid black ;">        
+                <td class="producto" colspan="2" >
                     <strong>TOTAL </strong>
                 </td>
                 <td>

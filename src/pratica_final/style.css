@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.fondo{
+    background: url(ll.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.pack{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pack form{
+    background: rgba(255, 255, 255, 0.31);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+    display: flex;
+    flex-direction: row;
+    height: 180px ;
+    border-radius: 10px;
+    width: 500px;
+}
+
+.pack form h1{
+    margin-top: 60px;
+    margin-left: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 40px;    
+    color: whitesmoke;
+}
+
+.pack form .conter{
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    margin-top: 30px;
+}
+
+.pack form .conter input{
+    
+    border-radius: 20px;
+    border: none;
+    height: 35px;
+    width: 250px;
+
+    padding-left: 10px;
+}
+
+.pack form .conter button{
+    height: 35px;
+    cursor: pointer;
+    border: none;
+    background: rgb(91, 16, 156);
+    color: white;
+    border-radius: 10px;
+}
+
+.center{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.center .center2{
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: -4px 9px 29px -13px rgba(0,0,0,0.75);
+    background: white;
+    
+}
+
+.center .center2 button{
+    padding: 10px 15px;
+    border: none;
+    background: rgb(91, 16, 156);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.center .center2 button a{
+    text-decoration: none;
+    color: white;
+}
+
+.recp,.pal,.nueva{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nueva .nuev{
+    width:400px;
+    box-shadow: -4px 9px 29px -13px rgba(0,0,0,0.75);
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.nueva .nuev form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.nueva .nuev form button{
+    margin: 10px 150px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: rgb(91, 16, 156);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.nueva .nuev form input{
+    margin: 10px 100px;
+    height: 25px;
+    padding-left: 6px;
+}
+.recp .recp_1, .pal .pal_2{
+    width: 600px;
+    box-shadow: -4px 9px 29px -13px rgba(0,0,0,0.75);
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+   
+}
+
+.recp .recp_1 h1{
+    margin-top: 20px;
+}
+
+.recp .recp_1 button{
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.recp .recp_1 button a {
+    text-decoration: none;
+    color: white;
+}
+
+.pal .pal_2 form{
+    display: flex;
+    margin: 10px 180px;
+    flex-direction: column;
+}
+.pal .pal_2 form input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.pal .pal_2 form button{
+    padding: 8px 15px;
+    border: none;
+    background:rgb(91, 16, 156) ;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px;
+}
+
+.pal .pal_2 form a{
+    text-decoration: none;
+    color: white;
+}
